@@ -148,11 +148,11 @@
 <body>
     <script type="module">
 
-        import * as THREE from './viewer/three/three.module.js';
-        import { OrbitControls } from './viewer/util/OrbitControls.js';
-        import { GLTFLoader } from './viewer/util/loaders/GLTFLoader.js';
-        import { RGBELoader } from './viewer/util/loaders/RGBELoader.js';
-        import { RoughnessMipmapper } from './viewer/util/RoughnessMipmapper.js';
+        import * as THREE from './three/three.module.js';
+        import { OrbitControls } from './util/OrbitControls.js';
+        import { GLTFLoader } from './util/loaders/GLTFLoader.js';
+        import { RGBELoader } from './util/loaders/RGBELoader.js';
+        import { RoughnessMipmapper } from './util/RoughnessMipmapper.js';
 
         let camera, scene, renderer;
 
@@ -179,7 +179,7 @@
             });
 
             new RGBELoader()
-                .setPath('./viewer/textures/equirectangular/')
+                .setPath('./textures/equirectangular/')
                 .load('Skybox1.hdr', function (texture) {
 
                     texture.mapping = THREE.EquirectangularReflectionMapping;
@@ -194,7 +194,7 @@
                     // use of RoughnessMipmapper is optional
                     const roughnessMipmapper = new RoughnessMipmapper(renderer);
 
-                    const loader = new GLTFLoader(loadingManager).setPath('./viewer/models/');
+                    const loader = new GLTFLoader(loadingManager).setPath('./models/');
                     loader.load('cerro_gordo.glb', function (gltf) {
 
                         gltf.scene.traverse(function (child) {

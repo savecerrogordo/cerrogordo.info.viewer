@@ -163,10 +163,10 @@
             const container = document.createElement('div');
             document.body.appendChild(container);
 
-            scene = new THREE.Scene();
-
             camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.25, 20);
             camera.position.set(0, 0.8, 0);
+
+            scene = new THREE.Scene();
 
             const loadingManager = new THREE.LoadingManager(() => {
 
